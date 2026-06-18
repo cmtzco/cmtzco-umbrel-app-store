@@ -22,7 +22,7 @@ website: https://openaudible.org
 dependencies: []
 repo: https://github.com/openaudible/openaudible_docker
 support: https://github.com/openaudible/openaudible_docker/issues
-port: 3000
+port: 13430
 gallery:
   - https://openaudible.org/screenshots/win/main_window.png
   - https://openaudible.org/images/1200x628.png
