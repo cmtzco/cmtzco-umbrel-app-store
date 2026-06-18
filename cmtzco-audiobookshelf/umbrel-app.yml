@@ -1,0 +1,41 @@
+manifestVersion: 1.1
+id: cmtzco-audiobookshelf
+category: media
+name: Audiobookshelf
+version: "2.35.1"
+tagline: Self-hosted audiobook and podcast server
+description: >-
+  Audiobookshelf is an open-source self-hosted media server for audiobooks,
+  podcasts, and ebooks.
+
+
+  It supports multi-user libraries with per-user progress sync, metadata and
+  cover lookup, podcast episode downloads, RSS feeds, automated backups, mobile
+  apps, and basic ebook reading.
+developer: Audiobookshelf
+website: https://www.audiobookshelf.org
+dependencies: []
+repo: https://github.com/advplyr/audiobookshelf
+support: https://github.com/advplyr/audiobookshelf/issues
+port: 13378
+gallery:
+  - https://raw.githubusercontent.com/advplyr/audiobookshelf/master/images/DemoLibrary.png
+  - https://raw.githubusercontent.com/advplyr/audiobookshelf/master/images/LibraryStreamSquare.png
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: >-
+  Audiobookshelf 2.35.1 fixes duplicate refresh token handling that could cause
+  unexpected logouts, server crashes during some author renames, crashes when
+  scanning invalid metadata.json files, and case-insensitive username/email
+  matching in Sequelize user queries.
+
+
+  Full release notes are available at
+  https://github.com/advplyr/audiobookshelf/releases/tag/v2.35.1
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: cmtzco
+submission: https://github.com/cmtzco/cmtzco-umbrel-app-store
+icon: https://www.audiobookshelf.org/Logo.png
+torOnly: false
