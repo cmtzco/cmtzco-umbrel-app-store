@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cmtzco-openaudible_server_1
+      APP_PORT: 3000
+
+  server:
+    image: openaudible/openaudible:latest@sha256:de29753bcca6b7a2c465337e073880839b26a5e02fc445cc3ff3d2d0ff383d15
+    restart: on-failure
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ:-UTC}
+      - OA_BETA=false
+      - KASM_AUDIO_ENABLED=1
+      - OA_KIOSK=true
+      - oa_internal_browser=true
+      - DWEBKIT_DISABLE_DMABUF_RENDERER=1
+      - DWEBKIT_DISABLE_COMPOSITING_MODE=1
+      - DWEBKIT_FORCE_SOFTWARE_RENDERING=1
+      - DGDK_GL=disable
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ${UMBREL_ROOT}/data/storage/downloads/openaudible:/config/OpenAudible
