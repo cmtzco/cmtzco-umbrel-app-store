@@ -1,0 +1,40 @@
+manifestVersion: 1.1
+id: cmtzco-openaudible
+category: media
+name: OpenAudible
+version: "4.8.3"
+tagline: Download, manage, and convert Audible libraries
+description: >-
+  OpenAudible is a desktop audiobook manager for downloading, backing up,
+  organizing, and converting Audible libraries to MP3 and M4B formats.
+
+
+  This app runs the official OpenAudible Docker container, which provides the
+  desktop GUI through a browser-accessible remote desktop on Umbrel. OpenAudible
+  is free to try; conversion to MP3/M4B requires a one-time OpenAudible license.
+
+
+  Note: the upstream Docker image is currently published for amd64 only. The
+  container stores books, metadata, and settings in Umbrel's shared downloads
+  storage at downloads/openaudible.
+developer: OpenAudible
+website: https://openaudible.org
+dependencies: []
+repo: https://github.com/openaudible/openaudible_docker
+support: https://github.com/openaudible/openaudible_docker/issues
+port: 13430
+gallery:
+  - https://openaudible.org/screenshots/win/main_window.png
+  - https://openaudible.org/images/1200x628.png
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: >-
+  OpenAudible 4.8.3 adds a new View menu and improves compatibility,
+  accessibility, and AI help.
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: cmtzco
+submission: https://github.com/cmtzco/cmtzco-umbrel-app-store
+icon: https://openaudible.org/icons/512x512.png
+torOnly: false
