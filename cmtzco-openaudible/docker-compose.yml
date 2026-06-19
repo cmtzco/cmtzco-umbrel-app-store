@@ -24,4 +24,5 @@ services:
     security_opt:
       - seccomp:unconfined
     volumes:
-      - ${UMBREL_ROOT}/data/storage/downloads/openaudible:/config/OpenAudible
+      - ${APP_DATA_DIR}/data:/config/OpenAudible
+      - ${UMBREL_ROOT}/data/storage/downloads:/downloads
