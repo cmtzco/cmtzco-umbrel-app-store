@@ -19,13 +19,16 @@ permissions:
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/cmtzco-openaudible
-  IMAGE_TAG: 4.8.3-d7bf8f9
-  OPENAUDIBLE_DOCKER_REF: d7bf8f9b16e1d660594032cc4326a7bf894c396f
+  IMAGE_TAG: 4.8.3-cmtzco.3
+  BASE_IMAGE: ghcr.io/${{ github.repository_owner }}/cmtzco-openaudible:4.8.3-d7bf8f9
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -43,7 +46,9 @@ jobs:
       - name: Build and publish image
         uses: docker/build-push-action@v6
         with:
-          context: https://github.com/openaudible/openaudible_docker.git#${{ env.OPENAUDIBLE_DOCKER_REF }}
+          context: cmtzco-openaudible/image
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
+          build-args: |
+            BASE_IMAGE=${{ env.BASE_IMAGE }}
           tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}

@@ -7,7 +7,7 @@ services:
       APP_PORT: 3000
 
   server:
-    image: ghcr.io/cmtzco/cmtzco-openaudible:4.8.3-d7bf8f9
+    image: ghcr.io/cmtzco/cmtzco-openaudible:4.8.3-cmtzco.3
     restart: on-failure
     environment:
       - PUID=1000
