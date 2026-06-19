@@ -2,7 +2,7 @@ manifestVersion: 1.1
 id: cmtzco-openaudible
 category: media
 name: OpenAudible
-version: "4.8.3"
+version: "4.8.3-cmtzco.2"
 tagline: Download, manage, and convert Audible libraries
 description: >-
   OpenAudible is a desktop audiobook manager for downloading, backing up,
@@ -15,8 +15,9 @@ description: >-
 
 
   This app uses a multi-arch GHCR image built from OpenAudible's Docker source
-  for amd64 and arm64 Umbrel devices. The container stores books, metadata, and
-  settings in Umbrel's shared downloads storage at downloads/openaudible.
+  for amd64 and arm64 Umbrel devices. The container stores OpenAudible settings
+  and temporary files in Umbrel app data, with Umbrel Downloads available inside
+  the app at /downloads for importing and exporting audiobooks.
 developer: OpenAudible
 website: https://openaudible.org
 dependencies: []
@@ -32,7 +33,9 @@ releaseNotes: >-
   OpenAudible 4.8.3 adds a new View menu and improves compatibility,
   accessibility, and AI help. This Umbrel packaging uses a multi-arch GHCR image
   built from OpenAudible's Docker source to avoid amd64-only Docker Hub image
-  startup failures on ARM devices.
+  startup failures on ARM devices. This update moves OpenAudible's writable
+  config and temp directory to Umbrel app data while keeping Umbrel Downloads
+  available at /downloads.
 permissions:
   - STORAGE_DOWNLOADS
 submitter: cmtzco
